@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: ["https://*", "http://*"],
+    origin: ["https:\/\/*", "http:\/\/*"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allowedHeaders: "*",
     exposedHeaders: ["Link"],
@@ -45,5 +45,5 @@ v1Router.get("/healthz", handlerReadiness);
 app.use("/v1", v1Router);
 
 app.listen(config.api.port, () => {
-  console.log(`Server is running on port: ${config.api.port}`);
+  console.log(`Server is running on port: http://localhost:${config.api.port}`);
 });
