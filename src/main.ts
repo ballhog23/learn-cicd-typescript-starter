@@ -19,14 +19,14 @@ export const app = express();
 app.use(express.json());
 
 app.use(
-	cors({
-		origin: ["https:\/\/*", "http:\/\/*"],
-		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-		allowedHeaders: "*",
-		exposedHeaders: ["Link"],
-		credentials: false,
-		maxAge: 300,
-	}),
+  cors({
+    origin: ["https:\/\/*", "http:\/\/*"],
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: "*",
+    exposedHeaders: ["Link"],
+    credentials: false,
+    maxAge: 300,
+  }),
 );
 
 app.use("/", express.static(path.join(__dirname, config.api.filepathRoot)));
@@ -45,7 +45,5 @@ v1Router.get("/healthz", handlerReadiness);
 app.use("/v1", v1Router);
 
 app.listen(config.api.port, () => {
-	console.log(
-		`Server is running on port: http://localhost:${config.api.port}`,
-	);
+  console.log(`Server is running on port: http://localhost:${config.api.port}`);
 });
