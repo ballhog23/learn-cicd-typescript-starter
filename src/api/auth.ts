@@ -1,6 +1,7 @@
 import { IncomingHttpHeaders } from "http";
 
 export function getAPIKey(headers: IncomingHttpHeaders): string | null {
+  throw new Error('breaking on purpose');
   const authHeader = headers["authorization"];
   if (!authHeader) {
     return null;
