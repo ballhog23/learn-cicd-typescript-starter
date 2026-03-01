@@ -20,7 +20,7 @@ app.use(express.json());
 
 app.use(
 	cors({
-		origin: ["https:\/\/*", "http:\/\/*"],
+		origin: ["https://*", "http://*"],
 		methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
 		allowedHeaders: "*",
 		exposedHeaders: ["Link"],
@@ -49,3 +49,8 @@ app.listen(config.api.port, () => {
 		`Server is running on port: http://localhost:${config.api.port}`,
 	);
 });
+
+function unused() {
+	// this function does nothing
+	// and is called nowhere
+}
