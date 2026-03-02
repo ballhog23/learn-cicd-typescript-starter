@@ -24,9 +24,6 @@ jobs:
             -   name: Build app
                 run: npm run build
 
-    google_cloud_auth_build_docker:
-        runs-on: ubuntu-latest
-        steps:
             -   id: auth
                 uses: google-github-actions/auth@v2
                 with:
